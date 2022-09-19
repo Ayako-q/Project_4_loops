@@ -1,1 +1,43 @@
+package com.example.p4;
 import java.util.Scanner;
+public class P4 {
+    public static void main (String[] args){
+        boolean ingame = true;
+        while(ingame == true){
+            Scanner in = new Scanner(System.in);
+            System.out.println("Hi, user, I am book recommendor, tell me your name:");
+            String username = in.nextLine();
+            System.out.println("Nice to meet you, " + username + ", what is your age:");
+            int userage = in.nextInt();
+            System.out.println("Now, choose book genre that you like, type 1 (science fiction) or 2 (Detective)");
+            int genre = in.nextInt();
+            if(userage <=6){
+                System.out.println("Sorry, " + username + ", we can't recommend book for you at this moment.");
+            }
+            else if(userage >= 13 && userage <= 17){
+                if(genre == 1){
+                    System.out.println("We recommend you to read Dune by Frank Herbert");
+                }
+                else if(genre == 2){
+                    System.out.println("We recommend you to read Sherlock Holmes by Arthur Conan Doyle");
+                }
+            }
+            else if(userage >= 18) {
+                if (genre == 1) {
+                    System.out.println("We recommend you to read by 1984 by George Orwell");
+                } else if (genre == 2) {
+                    System.out.println("We recommend you to read The Girl with the Dragon Tattoo");
+                }
+            }
+            System.out.println("Do you want to start again? Type Y/N :");
+            String wannaplay = in.next();
+            if(wannaplay.equals("Y") || wannaplay.equals("y")){
+                System.out.println("Okay, lets do it one more time");
+            }
+            else if (wannaplay.equals("N") || wannaplay.equals("n")){
+                System.out.println("Okay, thank you for your time, bye!");
+                break;
+            }
+        }
+    }
+}
